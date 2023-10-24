@@ -105,46 +105,6 @@ plt.legend(['Entrenamiento', 'Validación'], loc='upper left')
 plt.show()
 
 
-""""
-# Predecir las etiquetas para los datos de prueba
-y_pred = model.predict(X_test)
-
-y_pred_classes = np.zeros_like(y_pred)
-y_pred_classes[np.arange(len(y_pred)), y_pred.argmax(1)] = 1
-
-y_test_bin = np.argmax(y_test, axis=1)
-y_pred_classes_bin = np.argmax(y_pred_classes, axis=1)
-
-# Calcular la matriz de confusión
-confusion_mtx = confusion_matrix(y_test_bin, y_pred_classes_bin)
-
-# Mostrar la matriz de confusión utilizando matplotlib
-plt.figure(figsize=(8, 6))
-plt.imshow(confusion_mtx, interpolation='nearest', cmap=plt.cm.Blues)
-plt.title('Matriz de Confusión')
-plt.colorbar()
-tick_marks = np.arange(2)
-plt.xticks(tick_marks, ['No Alzheimer', 'Alzheimer'], rotation=45)
-plt.yticks(tick_marks, ['No Alzheimer', 'Alzheimer'])
-
-print(y_test.shape)
-print(y_pred_classes.shape)
-
-# Anotar los valores en la matriz
-thresh = confusion_mtx.max() / 2.0
-for i in range(2):
-    for j in range(2):
-        plt.text(j, i, format(confusion_mtx[i, j], 'd'),
-                 ha="center", va="center",
-                 color="white" if confusion_mtx[i, j] > thresh else "black")
-
-plt.ylabel('Valor Real')
-plt.xlabel('Predicción')
-plt.tight_layout()
-plt.show()
-
-"""
-
 # Hacer la predicción
 nueva_imagen_preprocesada = no_az  # Asegúrate de definir 'preprocesar_imagen'
 
